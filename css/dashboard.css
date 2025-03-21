@@ -1,0 +1,174 @@
+/* Dashboard Layout */
+.dashboard {
+    padding: 120px 0 100px; /* Increased bottom padding for bottom dock */
+    min-height: calc(100vh - 350px);
+}
+
+.dashboard-header {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.welcome-message {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.welcome-message i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-right: 20px;
+}
+
+.welcome-message h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.dashboard-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.dashboard-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-card h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Bottom Dock Navigation */
+.bottom-dock {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.bottom-dock-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.dock-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.dock-item.active {
+    color: var(--primary-color);
+}
+
+.dock-item i {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+}
+
+.dock-item span {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Recent Activity Section */
+.recent-activity {
+    margin-bottom: 80px; /* Space for bottom dock */
+}
+
+.activity-list {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.activity-icon i {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-content h4 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.activity-content p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.activity-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard {
+        padding: 100px 0 80px;
+    }
+    
+    .welcome-message {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .welcome-message i {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .dashboard-content {
+        grid-template-columns: 1fr;
+    }
+} 

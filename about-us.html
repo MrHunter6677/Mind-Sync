@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Mind Sync</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Fix navbar overlap issue */
+        body {
+            padding-top: 80px; /* Add padding to account for fixed navbar */
+        }
+        
+        /* About Us Section Styles */
+        .about-section {
+            background-color: var(--background-color);
+            padding: 4rem 0;
+            min-height: calc(100vh - 300px);
+        }
+        
+        .about-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .about-header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .about-header h1 i {
+            margin-right: 0.75rem;
+        }
+        
+        .about-header p {
+            color: var(--light-text);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .about-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .about-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .about-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        .about-card h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .about-card h2 i {
+            margin-right: 0.75rem;
+        }
+        
+        .about-card p {
+            color: var(--text-color);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+        
+        /* Mission & Vision */
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .mission, .vision {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .mission:hover, .vision:hover {
+            transform: translateY(-5px);
+        }
+        
+        .mission h3, .vision h3 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .mission h3 i, .vision h3 i {
+            margin-right: 0.75rem;
+        }
+        
+        .mission p, .vision p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        /* Features Section */
+        .features-section {
+            margin-bottom: 3rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(123, 104, 238, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 1.2rem;
+        }
+        
+        .feature-icon i {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: var(--text-color);
+        }
+        
+        .feature-desc {
+            font-size: 1rem;
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+        
+        /* Join Section */
+        .join-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .join-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .join-section p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .join-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .join-button {
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .join-now {
+            background: white;
+            color: var(--primary-color);
+        }
+        
+        .join-now:hover {
+            background: rgba(255,255,255,0.9);
+            transform: translateY(-3px);
+        }
+        
+        .learn-more {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .learn-more:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+        }
+        
+        /* Team Section */
+        .team-section {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .team-section h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .team-section > p {
+            color: var(--light-text);
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        .member-image {
+            height: 230px;
+            overflow: hidden;
+        }
+        
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-member:hover .member-image img {
+            transform: scale(1.08);
+        }
+        
+        .member-info {
+            padding: 1.5rem;
+        }
+        
+        .member-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .member-role {
+            color: var(--primary-color);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .member-bio {
+            color: var(--light-text);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            color: var(--light-text);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mission-vision {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid,
+            .team-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .join-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .about-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1><i class="fas fa-brain"></i> Mind Sync</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-outline"><i class="fas fa-sign-in-alt"></i> Login</a>
+                    <a href="signup.html" class="btn btn-primary"><i class="fas fa-user-plus"></i> Sign Up</a>
+                </div>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-header">
+                <h1><i class="fas fa-brain"></i> About Mind Sync</h1>
+                <p>A mental wellness platform built by students, for everyone</p>
+            </div>
+            
+            <!-- About Us Content -->
+            <div class="about-card">
+                <h2><i class="fas fa-star"></i> Our Story</h2>
+                <p>Mind Sync was created by BTech AIML students at Ramachandra College of Engineering with a simple but powerful vision: to make mental health support accessible to everyone. Developed in 2023, our platform connects individuals on their mental wellness journeys, providing resources, community support, and educational materials.</p>
+                <p>Our team of dedicated students came together with a shared belief that mental health care should be destigmatized, accessible, and available to all. Mind Sync is the result of our collective effort and passion for using technology to help others in their mental wellness journey.</p>
+            </div>
+            
+            <!-- Mission & Vision -->
+            <div class="mission-vision">
+                <div class="mission">
+                    <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+                    <p>To create a supportive digital community that empowers individuals to take charge of their mental health through connection, education, and accessible resources.</p>
+                </div>
+                <div class="vision">
+                    <h3><i class="fas fa-eye"></i> Our Vision</h3>
+                    <p>A world where mental wellness is prioritized, understood, and supported, enabling everyone to thrive regardless of their challenges.</p>
+                </div>
+            </div>
+            
+            <!-- Features Section -->
+            <div class="features-section">
+                <h2>What Makes Mind Sync Special</h2>
+                <p>We've created a platform focused on supporting your mental health journey</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="feature-title">Supportive Community</h3>
+                        <p class="feature-desc">Connect with others who understand what you're going through in a safe, moderated environment.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-book-medical"></i>
+                        </div>
+                        <h3 class="feature-title">Expert Resources</h3>
+                        <p class="feature-desc">Access curated mental health guides, articles, and educational materials.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Privacy Focused</h3>
+                        <p class="feature-desc">Your information remains secure with strict privacy controls and anonymity options.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3 class="feature-title">Peer Support</h3>
+                        <p class="feature-desc">Share experiences and coping strategies with peers facing similar challenges.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Join Section -->
+            <div class="join-section">
+                <h2><i class="fas fa-rocket"></i> Ready to Join Our Community?</h2>
+                <p>Start your mental wellness journey with Mind Sync today. Create your account to access all features and connect with our supportive community.</p>
+                <div class="join-buttons">
+                    <a href="signup.html" class="join-button join-now">Sign Up Now</a>
+                    <a href="index.html#features" class="join-button learn-more">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Team Section -->
+            <div class="team-section">
+                <h2>Meet Our Team</h2>
+                <p>The dedicated students behind Mind Sync</p>
+                
+                <div class="team-container">
+                    <!-- Team Leader -->
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="img/team-member-5.jpg" alt="Andukuri Jaya Nagasai Bharath">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Andukuri Jaya Nagasai Bharath</h3>
+                            <p class="member-role">Team Leader & Developer</p>
+                            <p class="member-bio">BTech 2nd year AIML student at Ramachandra College of Engineering, leading the team with expertise in backend development.</p>
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- UI/UX Designer -->
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="img/team-member-4.jpg" alt="Chintha Dinesh Babu">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Chintha Dinesh Babu</h3>
+                            <p class="member-role">UI/UX Designer</p>
+                            <p class="member-bio">BTech 2nd year AIML student focusing on creating intuitive and accessible user interfaces for mental health platforms.</p>
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Content Specialist -->
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="img/team-member-1.jpg" alt="Kancharla Karthik Raj">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Kancharla Karthik Raj</h3>
+                            <p class="member-role">Content Specialist</p>
+                            <p class="member-bio">BTech 2nd year AIML student creating meaningful mental health resources and educational content for our users.</p>
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Content Specialist -->
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="img/team-member-2.jpg" alt="Garapati Vasanth Kumar">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Garapati Vasanth Kumar</h3>
+                            <p class="member-role">Content Specialist</p>
+                            <p class="member-bio">BTech 2nd year AIML student at Ramachandra College of Engineering, creating engaging educational resources for mental wellness.</p>
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Researcher -->
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="img/team-member-3.jpg" alt="Parvatham Vamsi Sai">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Parvatham Vamsi Sai</h3>
+                            <p class="member-role">AI Researcher</p>
+                            <p class="member-bio">BTech 2nd year AIML student at Ramachandra College of Engineering, developing machine learning models for mental health applications.</p>
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Researcher -->
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="img/team-member-6.jpg" alt="Makutam Bhanodhay">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Makutam Bhanodhay</h3>
+                            <p class="member-role">AI Researcher</p>
+                            <p class="member-bio">BTech 2nd year AIML student at Ramachandra College of Engineering, focusing on data analysis and AI implementations for mental health solutions.</p>
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-brain"></i> Mind Sync</h2>
+                    <p>A safe space for mental wellness discussions</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3><i class="fas fa-sitemap"></i> Navigation</h3>
+                        <a href="index.html">Home</a>
+                        <a href="index.html#features">Features</a>
+                        <a href="index.html#topics">Forums</a>
+                        <a href="index.html#testimonials">Testimonials</a>
+                    </div>
+                    <div class="link-group">
+                        <h3><i class="fas fa-gavel"></i> Legal</h3>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                        <a href="community-guidelines.html">Community Guidelines</a>
+                    </div>
+                    <div class="link-group">
+                        <h3><i class="fas fa-map-marker-alt"></i> Contact</h3>
+                        <a href="tel:+919492935222">+91-9492935222</a>
+                        <a href="mailto:helpdesk@rcee.ac.in">helpdesk@rcee.ac.in</a>
+                        <p class="footer-address">Ramachandra College of Engineering<br>Eluru-534007, A.P., India</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span class="year">2025</span> Mind Sync. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+</body>
+</html> 

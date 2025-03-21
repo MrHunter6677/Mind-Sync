@@ -1,0 +1,19 @@
+{
+    "database": {
+        "host": "localhost",
+        "username": "root",
+        "password": "1234",
+        "dbname": "mind_sync"
+    },
+    "app": {
+        "base_url": "http://localhost/mind-sync/",
+        "home_page": "http://localhost/mind-sync/index.html",
+        "login_page": "http://localhost/mind-sync/login.html",
+        "register_page": "http://localhost/mind-sync/signup.html",
+        "dashboard_page": "http://localhost/mind-sync/php/dashboard.php"
+    },
+    "security": {
+        "cookie_expiry": 2592000,
+        "session_lifetime": 86400
+    }
+} 

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Mind Sync</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1><i class="fas fa-brain"></i> Mind Sync</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-outline"><i class="fas fa-sign-in-alt"></i> Login</a>
+                    <a href="signup.html" class="btn btn-primary active"><i class="fas fa-user-plus"></i> Sign Up</a>
+                </div>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="signup-section">
+        <div class="container">
+            <div class="signup-container">
+                <div class="signup-header">
+                    <h2><i class="fas fa-user-plus"></i> Create Your Account</h2>
+                    <p>Join our community and start your mental wellness journey</p>
+                </div>
+                <form class="signup-form" action="php/register.php" method="post">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstname"><i class="fas fa-user"></i> First Name</label>
+                            <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname"><i class="fas fa-user"></i> Last Name</label>
+                            <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="username"><i class="fas fa-user-tag"></i> Username</label>
+                        <input type="text" id="username" name="username" placeholder="Choose a username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password"><i class="fas fa-lock"></i> Password</label>
+                        <input type="password" id="password" name="password" placeholder="Create a password" required>
+                        <div class="password-toggle">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password"><i class="fas fa-lock"></i> Confirm Password</label>
+                        <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm your password" required>
+                    </div>
+                    <div class="password-strength">
+                        <div class="strength-meter">
+                            <div class="strength-bar"></div>
+                        </div>
+                        <div class="strength-text">Password strength: <span>Weak</span></div>
+                    </div>
+                    <div class="form-group terms">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to the <a href="terms-of-service.html">Terms of Service</a> and <a href="privacy-policy.html">Privacy Policy</a></label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-user-plus"></i> Create Account
+                    </button>
+                </form>
+                <div class="social-signup">
+                    <p>Or sign up with</p>
+                    <div class="social-buttons">
+                        <a href="#" class="social-btn google">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="social-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-btn twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="signup-footer">
+                    <p>Already have an account? <a href="login.html">Log in</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-brain"></i> Mind Sync</h2>
+                    <p>A safe space for mental wellness discussions</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3><i class="fas fa-sitemap"></i> Navigation</h3>
+                        <a href="index.html">Home</a>
+                        <a href="index.html#features">Features</a>
+                        <a href="index.html#topics">Forums</a>
+                        <a href="index.html#testimonials">Testimonials</a>
+                    </div>
+                    <div class="link-group">
+                        <h3><i class="fas fa-gavel"></i> Legal</h3>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                        <a href="community-guidelines.html">Community Guidelines</a>
+                    </div>
+                    <div class="link-group">
+                        <h3><i class="fas fa-map-marker-alt"></i> Contact</h3>
+                        <a href="tel:+919492935222">+91-9492935222</a>
+                        <a href="mailto:helpdesk@rcee.ac.in">helpdesk@rcee.ac.in</a>
+                        <p class="footer-address">Ramachandra College of Engineering<br>Eluru-534007, A.P., India</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span class="year">2025</span> Mind Sync. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>

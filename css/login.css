@@ -1,0 +1,328 @@
+/* Login Page Styles */
+.login-section {
+    padding: 120px 0 70px;
+    background: linear-gradient(rgba(91, 109, 205, 0.05), rgba(61, 52, 139, 0.1));
+    min-height: calc(100vh - 350px);
+}
+
+.login-container {
+    max-width: 450px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.login-header p {
+    color: var(--gray-color);
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.login-form .form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(91, 109, 205, 0.2);
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 42px;
+    cursor: pointer;
+    color: var(--gray-color);
+}
+
+.password-toggle:hover {
+    color: var(--primary-color);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    margin-right: 5px;
+    width: auto;
+}
+
+.forgot-password {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.btn-block {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.social-login {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.social-login p {
+    position: relative;
+    margin-bottom: 20px;
+    color: var(--gray-color);
+}
+
+.social-login p::before,
+.social-login p::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+.social-login p::before {
+    left: 0;
+}
+
+.social-login p::after {
+    right: 0;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-btn.google {
+    background-color: #DB4437;
+    color: white;
+}
+
+.social-btn.facebook {
+    background-color: #4267B2;
+    color: white;
+}
+
+.social-btn.twitter {
+    background-color: #1DA1F2;
+    color: white;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.login-footer a {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 576px) {
+    .login-container {
+        padding: 20px;
+    }
+    
+    .social-login p::before,
+    .social-login p::after {
+        width: 25%;
+    }
+}
+
+/* Active Navigation Style */
+.auth-buttons .active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Message Alert Styles */
+.message-alert {
+    padding: 12px 16px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s ease;
+}
+
+.message-alert i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.message-alert.success {
+    background-color: rgba(76, 175, 80, 0.1);
+    border-left: 4px solid var(--success-color);
+    color: var(--success-color);
+}
+
+.message-alert.error {
+    background-color: rgba(255, 82, 82, 0.1);
+    border-left: 4px solid var(--danger-color);
+    color: var(--danger-color);
+}
+
+.message-alert .close-btn {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+.message-alert .close-btn:hover {
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Dialog Styles */
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.dialog {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    animation: scaleIn 0.3s ease;
+}
+
+.dialog-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dialog-header h3 {
+    margin: 0;
+    color: var(--dark-color);
+    font-size: 1.3rem;
+}
+
+.dialog-header .close-btn {
+    background: none;
+    border: none;
+    color: var(--gray-color);
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.dialog-header .close-btn:hover {
+    color: var(--dark-color);
+}
+
+.dialog-content {
+    padding: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.dialog-actions {
+    padding: 15px 20px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
