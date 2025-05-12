@@ -1,5 +1,8 @@
 # Mind Sync - Mental Wellness Forum
 
+This website is made when I participated in a hackathon held by BrainOVision Solutions.
+This entire project is made within 24 hrs by me and my team
+
 Mind Sync is a safe space for people to discuss mental health and wellness. This project contains the front-end implementation of the Mind Sync website.
 
 ## Features
